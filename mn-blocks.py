@@ -20,7 +20,7 @@ header = {
 }
 r = requests.get(link, headers=header)
 timeout = 3
-masternodes = pd.DataFrame(json.loads(r.content)["data"])
+masternodes = pd.DataFrame(json.loads(r.content)["data"]["masternodes"])
 masternodes.rename(index=str, columns={"height": "Block_Registered"}, inplace = True)
 start = time.time()
 
